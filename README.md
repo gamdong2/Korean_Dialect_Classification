@@ -4,8 +4,6 @@
 <img src="https://img.shields.io/badge/Konlpy-4285F4?style=for-the-badge&logo=python&logoColor=white"/>&nbsp;
 <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white"/>&nbsp;
 
----
-
 ## 프로젝트 제목
 
 **한국어 사투리 분류 시스템 개발**
