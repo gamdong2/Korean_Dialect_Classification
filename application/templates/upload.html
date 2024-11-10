@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파일 업로드</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+        .upload-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .styled-button {
+            background-color: blue;  /* 파스텔과 파란색의 중간 색 */
+            color: white;  /* 글자 색상 */
+            font-weight: bold;  /* 글씨 굵게 */
+            border: none;  /* 테두리 없앰 */
+            border-radius: 5px;  /* 버튼 모서리 둥글게 */
+            padding: 10px 15px;  /* 버튼의 크기 설정 (가로, 세로 크기 증가) */
+            font-size: 16px;  /* 글씨 크기 */
+            cursor: pointer;  /* 마우스 올리면 포인터 표시 */
+            transition: background-color 0.1s ease;  /* 부드러운 색상 전환 */
+        }
+    
+        .styled-button:hover {
+            background-color: #5AB1E4;  /* 호버 시 밝은 파란색 */
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-box">
+        <h2>파일 업로드(.txt)</h2>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="text_file" accept=".txt" required><br><br>
+            <button type="submit" class="styled-button">문제 생성</button>
+        </form>
+    </div>
+</body>
+</html>

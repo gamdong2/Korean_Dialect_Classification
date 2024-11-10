@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 결과</title>
+</head>
+<body>
+    <h1>문제 결과</h1>
+
+    <!-- 현재 문제 및 사용자 답변과 정답 여부 표시 -->
+    <p>문제: {{ sentence }}</p>
+    <p>선택된 단어: <strong>{{ selected_word }}</strong></p>
+    <p>사용자의 답: {{ user_answer }}</p>
+    <p>정답: {{ correct_pos }}</p>
+    {% if correct %}
+        <p style="color:green;">정답입니다!</p>
+    {% else %}
+        <p style="color:red;">틀렸습니다! 정답은 '{{ correct_pos }}'입니다.</p>
+    {% endif %}
+
+    <!-- 다음 문제로 이동할 수 있는 버튼 -->
+    <form method="GET" action="{% url 'quiz_view' %}">
+        <button type="submit">다음 문제 풀기</button>
+    </form>
+
+    <!-- 현재까지 점수 및 문제 풀이 상황 표시 -->
+    <h2>현재 점수: {{ current_score }}/100</h2>
+    <h3>이전 문제</h3>
+    <ul>
+        {% for entry in previous_questions %}
+            <li>문제: {{ entry.question }} - 정답: {{ entry.correct_pos }} (사용자의 답: {{ entry.user_answer }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

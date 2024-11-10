@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오류 발생</title>
+</head>
+<body>
+    <h1>오류가 발생했습니다</h1>
+
+    <!-- 오류 메시지 출력 -->
+    <p>{{ error_message }}</p>
+
+    <!-- 홈으로 돌아가기 버튼 -->
+    <form method="GET" action="{% url 'quiz_view' %}">
+        <button type="submit">다시 시도</button>
+    </form>
+</body>
+</html>
